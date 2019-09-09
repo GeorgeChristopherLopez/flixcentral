@@ -1,0 +1,182 @@
+:root {
+    --main-color: #3DAAE0;
+    --main-color-hover: #00539A;
+    --main-bluish-dark: #1C242E;
+    --main-dark: rgba(20,20,20);
+    --main-deep-dark: rgba(0,0,0);
+    --main-grey: rgba(153,153,153);
+    --main-light: #fff;
+}
+
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+
+li{
+    list-style: none;
+}
+
+
+body {
+    font-family: 'Helvetica';
+   
+   margin-top: 6.6rem;
+   
+    background: var(--main-deep-dark);
+    color: #fff;
+}
+
+
+
+a{
+
+    text-decoration:none !important;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: #fff;
+}
+
+h1,h2,h3,h4{
+    color: var(--main-white);
+}
+
+/*Header Section*/
+.header-container {
+    background: var(--main-deep-dark);
+    padding: 2rem 1rem;
+    position: fixed;
+    width: 100%;
+   
+    top: 0;
+    
+    z-index: 10;
+    display: flex;
+   justify-content: space-between;
+}
+
+@media only screen and (max-width: 1000px) {
+    .navbar-brand {
+        display: block;
+      
+        margin: 1rem auto;
+    }
+    .navbar-collapse {
+        display: block;
+
+        margin: 1rem auto;
+        justify-content: center;
+    }
+
+    .navbar-toggler {
+        display: block;
+     
+        margin: 1rem auto;
+        justify-content: center;
+    }
+}
+
+
+
+/*SHOWCASE SECTION*/
+.showcase-container {
+    height: 75vh;
+    
+    background: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7)), url('https://image.tmdb.org/t/p/w1280/hpgda6P9GutvdkDX5MUJ92QG9aj.jpg') no-repeat;
+    background-size: cover;
+  
+
+
+}
+
+
+/*CONTENT SECTION / MAIN PAGE */
+.thumbnails{
+    display: flex;
+}
+
+
+hr {
+    clear: both;
+    display: block;
+    width: 65%;
+    background-color: var(--main-color);
+    height: 1px;
+    margin: 2rem auto;
+}
+
+
+section .container{
+    padding: 2rem 0;
+}
+
+
+
+@media (min-width: 768px) {
+
+    /* show 4 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item{
+        display: block;
+    }
+
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+        transition: none;
+        margin-right: initial;
+    }
+
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+
+
+
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev .carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+
+
+
+
