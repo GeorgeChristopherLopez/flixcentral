@@ -50,7 +50,7 @@ h1,h2,h3,h4{
 /*Header Section*/
 .header-container {
     background: var(--main-deep-dark);
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     position: fixed;
     width: 100%;
    
@@ -63,8 +63,8 @@ h1,h2,h3,h4{
 
 @media only screen and (max-width: 1000px) {
     .navbar-brand {
-        display: block;
-      
+        display: block !important;
+        justify-content: center !important;
         margin: 1rem auto;
     }
     .navbar-collapse {
@@ -77,6 +77,13 @@ h1,h2,h3,h4{
     .navbar-toggler {
         display: block;
      
+        margin: 1rem auto;
+        justify-content: center;
+    }
+
+
+    .search-bar {
+        display: block;
         margin: 1rem auto;
         justify-content: center;
     }
