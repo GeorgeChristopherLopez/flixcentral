@@ -21,7 +21,6 @@ class carouselOne extends Component {
     }
 
     performSearch() {
-        console.log('performing search using movieDB data');
         const urlString = 'https://api.themoviedb.org/3/movie/upcoming?api_key=f56610dee3836c9b80964e9be6d563c2';
         $.ajax({
             url: urlString,
@@ -31,7 +30,6 @@ class carouselOne extends Component {
                 const results = searchResults.results
                 let movieRows = []  
                 results.forEach((movie, i) => {
-                    console.log(movie.poster_path);
                     movie.id = i ;
                     const posterURL = 'https://image.tmdb.org/t/p/w185';
                     const movieRow = <MovieRowOne
@@ -55,13 +53,13 @@ class carouselOne extends Component {
         return (
 
            
-            <section className="main-content">
+            <section  className="main-content">
                     <div className="container">
                             <h2>Coming Soon</h2>
 
                             <div id="carousel-1" className="carousel slide" data-ride="carousel">
 
-                                <div className="carousel-inner row w-100 mx-auto">
+                        <div className="multi-item carousel-inner row w-100 mx-auto">
                                                                                 
                             {/* CAROUSEL ITEMS */}
                             { this.state.carouselItem }                    

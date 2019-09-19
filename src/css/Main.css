@@ -126,14 +126,14 @@ section .container{
 
 
 @media (min-width: 768px) {
-
+ 
     /* show 4 items */
-    .carousel-inner .active,
-    .carousel-inner .active + .carousel-item,
-    .carousel-inner .active + .carousel-item + .carousel-item,
-    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item{
-        display: block;
-    }
+        .multi-item.carousel-inner .active,
+        .multi-item.carousel-inner .active + .carousel-item,
+        .multi-item.carousel-inner .active  + .carousel-item + .carousel-item,
+        .multi-item.carousel-inner .active  + .carousel-item + .carousel-item + .carousel-item {
+            display: block;
+        }
 
     .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
     .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
@@ -183,6 +183,9 @@ section .container{
         visibility: visible;
     }
 }
+
+
+
 
 
 

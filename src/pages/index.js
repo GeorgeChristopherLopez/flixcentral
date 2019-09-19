@@ -9,13 +9,37 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 
-export default class Main extends Component {
+class Main extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            searchTerm: '',
+            showingSearchBar: false
+
+        }
+
+    }
+   
+
+    showingSearchBarHandler = () => {
+        this.setState({ showingSearchBar: !this.state.showingSearchBar })
+    }
+
+    searchChangeHandler = (e) => {
+        this.setState({ searchTerm : e.target.value })
+
+    }
+
     render() {
 
         return (
             <Router>
-            <div>
-                    <Header />
+                <div>
+                    <Header
+                        show={this.state.showingSearchBar}
+                        changed={this.searchChangeHandler}
+                        clicked={this.showingSearchBarHandler} />
                     <Route exact path="/" render={props => (
                         <React.Fragment>
 
@@ -30,7 +54,9 @@ export default class Main extends Component {
                         
                         
                     )} />
-                    <Route path="/search" component={Search} />
+                    <Route
+                        path="/search"
+                        component={(props) => <Search  {...props} searchTerm={this.state.searchTerm} />} />
               
                 <Footer />
             </div>
@@ -40,3 +66,5 @@ export default class Main extends Component {
     }
 
 }
+
+export default Main;

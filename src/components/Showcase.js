@@ -1,19 +1,116 @@
 import React, {Component } from 'react';
 import styled from 'styled-components';
+import $ from 'jquery';
 // MEDIA QUERY
 import { generateMedia } from 'styled-media-query';
 
 class Showcase extends Component {
-    render() {
-        return (
-            <ShowcaseComponent className="showcase-container">
-                <div className="showcase-content">
-                    <PreTitle>Now Playing</PreTitle>
-                    <Title>Fast & Furious Presents: Hobbs & Shaw</Title>
-                    <button className="genre-tag">Get Tickets</button>
+ 
+    constructor(props) {
+        super(props)
+
+        const movies = [
+            { id: 0, title: 'Avengers: End Game', poster_path: 'https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg' },
+            { id: 1, title: 'Avengers: Infiinity War', poster_path: 'https://image.tmdb.org/t/p/original/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg' }
+        ]
+
+        this.state = {
+            rows: [
+
+                <div className="carousel-item active">
+                    <img className="w-100" src="https://image.tmdb.org/t/p/w1280/1TUg5pO1VZ4B0Q1amk3OlXvlpXV.jpg" alt="First slide" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>...</h5>
+                        <p>...</p>
+                    </div>
+                </div>,
+                <div className="carousel-item">
+                    <img className="w-100" src="https://image.tmdb.org/t/p/w1280/4XYxM4ZHX2mtdZe0z1psNUr7rxK.jpg" alt="Second slide" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>...</h5>
+                        <p>...</p>
+                    </div>
+                </div>,
+                <div className="carousel-item">
+                    <img className="w-100" src="https://image.tmdb.org/t/p/w1280/pWozCsrzMJzN8dbOm330sCKqdml.jpg" alt="Third slide" />
+                     <div class="carousel-caption d-none d-md-block">
+    <h5>...</h5>
+    <p>...</p>
+  </div>
                 </div>
-            </ShowcaseComponent>
-            
+
+
+            ]
+        }
+
+        const searchTerm = props.searchTerm;
+        this.performSearch(searchTerm);
+
+    }
+
+
+
+
+    performSearch(searchTerm) {
+        console.log('performing search using movieDB data');
+        const urlString = 'https://api.themoviedb.org/3/movie/now_playing?api_key=f56610dee3836c9b80964e9be6d563c2';
+        $.ajax({
+            url: urlString,
+            success: (searchResults) => {
+                console.log(searchResults)
+
+                const results = searchResults.results
+                let movieRows = []
+                results.forEach((movie, i) => {
+                    console.log(movie.poster_path);
+
+                    movie.id = i;
+                    const backdropURL = 'https://image.tmdb.org/t/p/w1280';
+                    const movieRow =
+
+                        <div className={"carousel-item " + (movie.id === 0 ? 'active' : '')}>
+                            <img className="w-100" src={backdropURL + movie.backdrop_path} alt="First slide" />
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1 style={titleStyle}>{movie.title}</h1>
+                                <button style={buttonStyle}>Get Tickets</button>
+                            </div>
+                        </div>;
+                    movieRows.push(movieRow)
+                });
+                this.setState({ rows: movieRows });
+            },
+            error: (xhr, status, err) => {
+                console.error('Failed to Fetch for popular films.')
+            }
+        })
+    }
+
+
+
+
+    render() {
+
+
+        return (
+
+            <section>
+                <div id="showcase" className="carousel slide" data-ride="carousel">
+                    <div className="carousel-inner">
+                        {this.state.rows}
+                                </div>
+                                <a className="carousel-control-prev" href="#showcase" role="button" data-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span className="sr-only">Previous</span>
+                                </a>
+                                <a className="carousel-control-next" href="#showcase" role="button" data-slide="next">
+                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span className="sr-only">Next</span>
+                                </a>
+                            </div>
+
+            </section>
+   
+           
             
             );
 
@@ -22,103 +119,16 @@ class Showcase extends Component {
 }
 
 export default Showcase;
+const buttonStyle = {
+    background: 'var(--main-color)',
+    border: 'none',
+    'font-weight': '800',
+    padding: '.75rem',
+    color: 'var(--main-light)',
+    'border-radius': '1rem'
 
-// MEDIA QUERY
-const customMedia = generateMedia({
-    lgDesktop: '1350px',
-    mdDesktop: '1150px',
-    tablet: '960px',
-    smTablet: '740px'
+}
 
-
-});
-
-
-const ShowcaseComponent = styled.section`
-
-////////// SHOWCASE CONTENT //////////////////////////
-    .showcase-content{
-
-
-
-      padding: 7rem;
-        padding-top: 17rem;
-    display: block;
-
-    text-align: left;
-    flex-direction: column;
-    z-index: 1;
- 
-    }
-
-    // genre-tag
-     .genre-tag{
-        border: none;
-   
-        padding: .75rem 1.5rem;
-        font-weight: 400;
-        line-height: normal;
-        border-radius: .5rem;
-        font-size: 1rem;
-        background: var(--main-color);
-        color: var(--main-light);
-        font-weight: 800;
-        cursor: pointer;
-        transition: background 0.2s ease-in;
-        &:hover {
-            background: var(--main-color-hover);
-       
-  
-        }
-
-
-    }
-
-
-
-`
-// MAIN TITLE
-
-const Title = styled.h1`
-        margin: 0 0 1.2rem;
-        font-size: 3.5rem;
-        font-weight: 700;
-        line-height: 1.1em;
-   ${customMedia.lessThan('tablet')`
-            font-size: 2.6rem;
-            
-
-        `}
-        
-
-`
-
-//SubTitle
-const PreTitle = styled.h3`
-   font-weight: 400;
-font-size: 1.875rem;
-line-height: 1.5rem;
-margin: 0 0 1.875rem;
-text-transform: uppercase;
-
-   ${customMedia.lessThan('smTablet')`
-            font-size: 1.4rem;
-            margin: 0;
-            
-
-        `}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-`;
+const titleStyle = {
+    color: 'var(--main-light)'
+}
