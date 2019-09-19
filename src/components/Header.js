@@ -59,6 +59,7 @@ export default Header;
 const headerStyle = {
     background: 'var(--main-color)',
     color: 'var(--main-light)',
+    margin: '0rem'
     
 }
 

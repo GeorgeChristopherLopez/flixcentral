@@ -93,7 +93,8 @@ class Showcase extends Component {
 
         return (
 
-            <section>
+            <section style={{ 'margin-top': '-5rem'
+    }}>
                 <div id="showcase" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
                         {this.state.rows}
