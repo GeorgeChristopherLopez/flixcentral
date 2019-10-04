@@ -1,18 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-a{
-    text-decoration: none;
-    color: #fff;
-}
-
-a:hover{
-    text-decoration: none;
-    color: #808080;
-}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -20,76 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    color: black;
 }
 
-.carousel-item img{
-    width: 100%;
-    background-size: cover;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
-
-.header-input{
-    background: transparent;
-    color: white;
-    border: none;
-    border-bottom: 1px solid white;
-}
-
-.header-input.active{
-    background: transparent;
-    border: none;
-}
-
-
-
-.carousel-item{
-    height: 300px;
-    padding: 3rem;
-}
-.caption{
-    padding: 1.5rem;
-}
-.news-section{
-    padding: 3rem 0rem;
-}
-.news {
-   
-    width: 100%;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    font-size: .5rem;
-
-}
-
-.news-card{
-
-}
-
-.news-card img{
-    width: 100%;
-
-    
-}
-
-.title{
-    background: #eee;
-  
-    font-size: .85rem;
-    padding: .4rem;
-}
-
-
-.footer-columns{
-    margin:  2rem auto;
-}
-
-footer li{
-    list-style: none;
-    
-}
-
-footer ul{
-    padding: 1rem;
-}
-
