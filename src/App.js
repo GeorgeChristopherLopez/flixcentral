@@ -1,19 +1,24 @@
 import React from 'react';
-import './css/Main.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import CharacterPanel from './components/CharacterPanel';
+import ShowcaseCarousel from './components/ShowcaseCarousel';
+import { BrowserRouter as Router } from 'react-router-dom';
+import News from './components/News';
 
-
-
-
-import Main from './pages/index'
-import { Switch, Route } from 'react-router-dom';
 
 function App() {
     return (
-        <Switch>
-            <Route path="/" component={Main} />
-        </Switch>
-
+      <Router>
+      <div className="App">
+          <Header />
+          <CharacterPanel />
+                <ShowcaseCarousel />
+                <News/>
+          <Footer />
+            </div>
+            </Router>
   );
-                    }
-                    
-                    export default App;
+}
+
+export default App;
