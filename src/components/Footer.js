@@ -79,7 +79,7 @@ const customMedia = generateMedia({
 
 const copyrightStyle = {
     padding: '.25rem',
-    'text-align': 'center'
+    textAlign: 'center'
 }
 
 // FOOTER CONTAINER
@@ -99,7 +99,7 @@ display : grid;
 grid-template-columns: repeat(4,1fr);
 ${customMedia.lessThan('mdDesktop')`
       grid-template-columns: repeat(2,1fr);
- 
+      
 `}
 
 }
@@ -116,46 +116,9 @@ text-decoration: underline;
 cursor: pointer;
 }
 
-//Language Button
 
-.lang-btn{
-background: transparent;
-border: 0.9px solid #333;
-padding: 1rem;
-width: 8rem;
-display: grid;
-grid-template-columns: repeat(3,1fr);
-margin: 2rem 0 2rem;
-cursor: pointer;
-}
-
-//TOGGLE LANGUAGE CONTENT
-
-.lang-toggle{
-    margin-left: 15%;
-    position: absolue;
-    margin-top: -3rem;
-    
-   
-
-}
-
-
-
-.lang-toggle ul{
-    background: var(--main-deep-dark);
-    width: 8.125rem;
-    border: 1px solid #333;
-    text-align: center;
-   &:hover{
-        background: #0085ff;
-        color: #fff;
-    }
- 
-}
 
 
 `;
 
 
-// LIST

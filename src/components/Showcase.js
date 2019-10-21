@@ -1,8 +1,7 @@
 import React, {Component } from 'react';
-import styled from 'styled-components';
 import $ from 'jquery';
 // MEDIA QUERY
-import { generateMedia } from 'styled-media-query';
+
 
 class Showcase extends Component {
  
@@ -70,7 +69,7 @@ class Showcase extends Component {
 
                         <div className={"carousel-item " + (movie.id === 0 ? 'active' : '')}>
                             <img className="w-100" src={backdropURL + movie.backdrop_path} alt="First slide" />
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption" style={{ position: "absolute", top:'35%' }}>
                                 <h1 style={titleStyle}>{movie.title}</h1>
                                 <button style={buttonStyle}>Get Tickets</button>
                             </div>
@@ -93,8 +92,7 @@ class Showcase extends Component {
 
         return (
 
-            <section style={{ 'margin-top': '-5rem'
-    }}>
+            <section style={{ 'margin-top': '-4rem' }}>
                 <div id="showcase" className="carousel slide" data-ride="carousel">
                     <div className="carousel-inner">
                         {this.state.rows}
@@ -131,5 +129,6 @@ const buttonStyle = {
 }
 
 const titleStyle = {
-    color: 'var(--main-light)'
+    color: 'var(--main-light)',
+    textShadow: '0px 0px 20px #000000'
 }
