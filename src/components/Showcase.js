@@ -8,11 +8,6 @@ class Showcase extends Component {
     constructor(props) {
         super(props)
 
-        const movies = [
-            { id: 0, title: 'Avengers: End Game', poster_path: 'https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg' },
-            { id: 1, title: 'Avengers: Infiinity War', poster_path: 'https://image.tmdb.org/t/p/original/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg' }
-        ]
-
         this.state = {
             rows: [
 
@@ -51,17 +46,17 @@ class Showcase extends Component {
 
 
     performSearch(searchTerm) {
-        console.log('performing search using movieDB data');
+        
         const urlString = 'https://api.themoviedb.org/3/movie/now_playing?api_key=f56610dee3836c9b80964e9be6d563c2';
         $.ajax({
             url: urlString,
             success: (searchResults) => {
-                console.log(searchResults)
+               
 
                 const results = searchResults.results
                 let movieRows = []
                 results.forEach((movie, i) => {
-                    console.log(movie.poster_path);
+                  
 
                     movie.id = i;
                     const backdropURL = 'https://image.tmdb.org/t/p/w1280';

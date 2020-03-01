@@ -16,7 +16,7 @@ class Header extends Component {
         return (
           
 
-            <nav style={headerStyle} className="navbar navbar-expand-lg navbar-dark header-container px-3">
+            <nav style={headerStyle} className="navbar navbar-expand-lg  navbar-dark header-container px-3">
 
                 <Link className="navbar-brand col-xs-12 col-md-5" to="/">FLEX CENTRAL</Link>
 
@@ -29,7 +29,7 @@ class Header extends Component {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                
-                <div className="collapse navbar-collapse col-xs-12  col-md-3" id="navbarNav">
+                <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav text-center">
                         <li className="nav-item active">
                             <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
@@ -59,7 +59,8 @@ export default Header;
 const headerStyle = {
     background: 'var(--main-color)',
     color: 'var(--main-light)',
-    margin: '0rem'
+    margin: '0rem',
+    padding: '1rem'
     
 }
 

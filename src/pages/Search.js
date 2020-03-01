@@ -6,11 +6,7 @@ class search extends Component {
     constructor(props) {
         super(props)
 
-        const movies = [
-            { id: 0, title: 'Avengers: End Game', poster_path: 'https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg' },
-            { id: 1, title: 'Avengers: Infiinity War', poster_path: 'https://image.tmdb.org/t/p/original/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg' }
-        ]
-
+        
         this.state = {
             rows: []
         }
@@ -24,17 +20,17 @@ class search extends Component {
 
 
     performSearch(searchTerm) {
-        console.log('performing search using movieDB data');
+       
         const urlString = 'https://api.themoviedb.org/3/search/movie?api_key=f56610dee3836c9b80964e9be6d563c2&query=' + searchTerm;
         $.ajax({
             url: urlString,
             success: (searchResults) => {
-                console.log(searchResults)
+               
 
                 const results = searchResults.results
                 let movieRows = []
                 results.forEach((movie, i) => {
-                    console.log(movie.poster_path);
+                   
                  
                     movie.id = i;
                     const posterURL = 'https://image.tmdb.org/t/p/w185';
@@ -77,11 +73,11 @@ export default search;
 
 const searchStyle = {
     display: 'grid',
-    'grid-gap': '2rem',
-    'grid-template-columns': 'repeat(3, 33.33%)',
+    gridGap: '2rem',
+    gridTemplateColumns: 'repeat(3, 33.33%)',
     margin: '20rem 5rem',
     padding: '0 4rem',
-    'text-align': 'center'
+    textAlign: 'center'
 
 }
 

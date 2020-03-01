@@ -50,17 +50,23 @@ h1,h2,h3,h4{
 /*Header Section*/
 .header-container {
     background: var(--main-deep-dark);
-    padding: .5rem 1rem 0;
+    
     position: fixed;
     width: 100%;
-   height: 85px;
+  
     top: 0;
     
     z-index: 100;
-    display: flex;
-   justify-content: space-between;
+    display: grid;
+ grid-template-columns:2fr 1fr 1fr;
 }
-
+.nav-link{
+    padding: 0;
+    margin: 0;
+}
+    .header-container div, .header-container div  nav{
+        background: var(--main-color);
+    }
 @media only screen and (max-width: 1000px) {
     .navbar-brand {
         display: block !important;
