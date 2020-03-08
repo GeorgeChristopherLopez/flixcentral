@@ -5,7 +5,7 @@ import styled from 'styled-components';
 //import { iosWorld } from 'react-icons-kit/ionicons/iosWorld/';
 //import { arrowSortedDown } from 'react-icons-kit/typicons/arrowSortedDown/';
 import { generateMedia } from 'styled-media-query';
-
+import moviedbLogo from '../img/moviedb.svg';
 
 class Footer extends Component {
     state = {
@@ -27,7 +27,10 @@ class Footer extends Component {
     render() {
         return (
             <FooterContainer>
-                <div style={copyrightStyle}><p>FLIX CENTRAL</p></div>
+                <div style={copyrightStyle}>
+                    <h4>FLIX CENTRAL</h4>
+                    <p> <span>Powered by <img style={{ height: "3rem" }} src={moviedbLogo} /></span></p>
+                </div>
                 <div className="footer-columns">
                     <ul>
                         <li>FAQ</li>
@@ -60,7 +63,7 @@ class Footer extends Component {
                     
 
                 </div>
-            
+               
             </FooterContainer>    
             );
         
