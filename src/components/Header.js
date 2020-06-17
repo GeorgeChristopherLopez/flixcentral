@@ -18,7 +18,7 @@ class Header extends Component {
 
             <nav style={headerStyle} className="navbar navbar-expand-lg  navbar-dark header-container px-3">
 
-                <Link className="navbar-brand col-xs-12 col-md-5" to="/">FLEX CENTRAL</Link>
+                <Link className="navbar-brand col-xs-12 col-md-5" to="/">FLIX CENTRAL</Link>
 
                 <div style={{ display: 'flex' }} className="search-bar col-md-4 col-xs-12">
                     {this.props.show ? <input className="search-box" type="text" onChange={this.props.changed} /> : null}
