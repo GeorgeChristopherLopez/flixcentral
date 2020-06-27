@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import MovieRowOne from './MovieRowOne';
 import $ from 'jquery';
 
-const key = 'f56610dee3836c9b80964e9be6d563c2';
-/* https://api.themoviedb.org/3/search/movie?query=marvel&api_key=f56610dee3836c9b80964e9be6d563c2 */
-const popularQuery = 'https://api.themoviedb.org/3/movie/popular?api_key=f56610dee3836c9b80964e9be6d563c2'
-let data = null;
-let img = null;
-
 class carouselOne extends Component {
     constructor(props) {
         super(props)

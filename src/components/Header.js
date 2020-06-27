@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
 import {  Link } from 'react-router-dom';
-import styled from 'styled-components';
+
 import { Icon } from 'react-icons-kit';
 import { ic_search } from 'react-icons-kit/md/ic_search';
 // MEDIA QUERY
-import { generateMedia } from 'styled-media-query';
 
 
 
@@ -32,13 +31,13 @@ class Header extends Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav text-center">
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Login</a>
+                            <a className="nav-link" href="/">Login</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Sign Up</a>
+                            <a className="nav-link" href="/">Sign Up</a>
                         </li>
                     </ul>
                 </div>

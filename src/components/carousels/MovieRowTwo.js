@@ -8,7 +8,7 @@ class movieRowTwo extends React.Component {
 
         >
             <div className="card-item">
-                <a href="#"><img className="card-img-top img-fluid" src={this.props.posterURL + this.props.movie.poster_path} alt={this.props.movie.title} />
+                <a href="/"><img className="card-img-top img-fluid" src={this.props.posterURL + this.props.movie.poster_path} alt={this.props.movie.title} />
                 </a>
                 <div className="card-body">
                     <h4 className="card-title">

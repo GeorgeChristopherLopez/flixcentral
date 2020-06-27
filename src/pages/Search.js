@@ -35,7 +35,7 @@ class search extends Component {
                     movie.id = i;
                     const posterURL = 'https://image.tmdb.org/t/p/w185';
                     const movieRow = <div id={movie.id} className="card-item">
-                        <a href="#"><img className="card-img-top img-fluid" src={movie.poster_path == null ? 'https://via.placeholder.com/200x375?text=NOT+AVAILABLE':`${posterURL}${movie.poster_path}`} alt={movie.title} />
+                        <a href="/"><img className="card-img-top img-fluid" src={movie.poster_path == null ? 'https://via.placeholder.com/200x375?text=NOT+AVAILABLE':`${posterURL}${movie.poster_path}`} alt={movie.title} />
                         </a>
                         <div className="card-body">
                             <h4 className="card-title">

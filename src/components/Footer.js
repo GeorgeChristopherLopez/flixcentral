@@ -29,7 +29,7 @@ class Footer extends Component {
             <FooterContainer>
                 <div style={copyrightStyle}>
                     <h4>FLIX CENTRAL</h4>
-                    <p> <span>Powered by <img style={{ height: "3rem" }} src={moviedbLogo} /></span></p>
+                    <p> <span>Powered by <img style={{ height: "3rem" }} src={moviedbLogo} alt="MOVIEDB"/></span></p>
                 </div>
                 <div className="footer-columns">
                     <ul>
